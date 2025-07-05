@@ -51,46 +51,63 @@ function messageBuilder(event) {
   
   const branch = snsMessageRaw.detail.branchName;
   const status = snsMessageRaw.detail.jobStatus;
-  // environment link
+  let link;
   if (!branch) {
-    const link = `<https://${process.env.SLACK_WEBHOOK_URL}|${process.env.SLACK_WEBHOOK_URL}>`;
+    link = `https://${process.env.SLACK_WEBHOOK_URL}`;
   } else {
-    const link = `<https://${branch}.${process.env.SLACK_WEBHOOK_URL}|${branch}.${process.env.SLACK_WEBHOOK_URL}>`;
+    link = `https://${branch}.${process.env.SLACK_WEBHOOK_URL}`;
   }
 
   let message = null;
-  let appendText = null;
   switch (status) {
     case "STARTED":
-      message = require("./start_message.json");
-      message.attachments[0].ts = timestamp;
+      message = {
+        attachments: [
+          {
+            color: "#439FE0",
+            pretext: "Release Started",
+            title: "Deployment Notification",
+            text: `Branch: ${branch}\nStatus: STARTED\n${link}`,
+            ts: timestamp
+          }
+        ]
+      };
       return message;
     case "FAILED":
-      message = require("./faild_message.json");
-      appendText = {
-        type: "section",
-        text: {
-          type: "mrkdwn",
-          text: `\`\`\`${JSON.stringify(snsMessageRaw)}\`\`\``,
-        },
+      message = {
+        attachments: [
+          {
+            color: "danger",
+            pretext: "⚠️ Release Failed",
+            title: "Deployment Notification",
+            text: `Branch: ${branch}\nStatus: FAILED\n${link}`,
+            fields: [
+              {
+                title: "Error Details",
+                value: `\`\`\`${JSON.stringify(snsMessageRaw)}\`\`\``,
+                short: false
+              }
+            ],
+            ts: timestamp
+          }
+        ]
       };
-      message.attachments[0].blocks.push(appendText);
-      message.attachments[0].ts = timestamp;
       return message;
     case "SUCCEED":
-      message = require("./success_message.json");
-      appendText = {
-        type: "section",
-        text: {
-          type: "mrkdwn",
-          text: link,
-        },
+      message = {
+        attachments: [
+          {
+            color: "good",
+            pretext: "✅ Release Succeeded 🎉 1️⃣⬆️",
+            title: "Deployment Notification",
+            text: `Branch: ${branch}\nStatus: SUCCEED\n${link}`,
+            ts: timestamp
+          }
+        ]
       };
-      message.attachments[0].blocks.push(appendText);
-      message.attachments[0].ts = timestamp;
       return message;
     default:
-      return { color: "info", text: "Build status unknown" };
+      return { text: "Build status unknown" };
   }
 }
 
