@@ -1,5 +1,5 @@
 // This should be your webook URL from Slack Incoming Webhooks
-const webhookUrl = "https://hooks.slack.com/services/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";
+const webhookUrl = process.env.SLACK_WEBHOOK_URL;
 
 const https = require("https");
 
@@ -15,8 +15,20 @@ function postRequest(data) {
       },
     };
     
+    // Log the data being sent to Slack
     const req = https.request(options, (res) => {
-      resolve(`Slack status: ${res.statusCode}`);
+      let responseBody = '';
+      res.on('data', (chunk) => {
+        responseBody += chunk;
+      });
+      res.on('end', () => {
+        console.log('Slack response body:', responseBody);
+        if (res.statusCode < 200 || res.statusCode >= 300) {
+          console.error(`Slack request error log: ${JSON.stringify(responseBody)}`);
+          return reject(`Slack request failed with status code: ${res.statusCode}`);
+        }
+        resolve(`Slack status: ${res.statusCode}`);
+      });
     });
 
     req.on('error', (e) => {
@@ -35,8 +47,6 @@ exports.handler = async (event) => {
       console.error("Missing SNS Message in event");
       return;
     }
-
-    console.log(JSON.stringify(event));
 
     const snsMessageRaw = event.Records[0].Sns.Message;
     const timestamp = new Date(event.Records[0].Sns.Timestamp).getTime() / 1000;
