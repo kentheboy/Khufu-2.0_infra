@@ -55,7 +55,11 @@ function messageBuilder(event) {
   if (!branch) {
     link = `https://${process.env.WEB_DOMAIN}`;
   } else {
-    link = `https://${branch}.${process.env.WEB_DOMAIN}`;
+    if (branch === "develop") {
+        link = `https://dev.${process.env.WEB_DOMAIN}`;
+    } else {
+        link = `https://${branch}.${snsMessageRaw.detail.appId}.amplifyapp.com`;
+    }    
   }
 
   let message = null;
