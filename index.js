@@ -45,11 +45,11 @@ function postRequest(data) {
 }
 
 function messageBuilder(event) {
-  const snsMessageRaw = event.Records[0].Sns.Message;
+  const snsMessageRaw = JSON.parse(event.Records[0].Sns.Message);
   const timestamp = new Date(event.Records[0].Sns.Timestamp).getTime() / 1000;
 
   console.log("Row message:", JSON.stringify(snsMessageRaw));
-
+  
   const branch = snsMessageRaw.detail.branchName;
   const status = snsMessageRaw.detail.jobStatus;
   // environment link
@@ -63,7 +63,7 @@ function messageBuilder(event) {
   let appendText = null;
   switch (status) {
     case "STARTED":
-      message = require("./started_message.json");
+      message = require("./start_message.json");
       message.attachments[0].ts = timestamp;
       return message;
     case "FAILED":

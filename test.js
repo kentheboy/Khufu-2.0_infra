@@ -1,4 +1,6 @@
 const h = require("./index.js").handler;
-h(require("./sample_amplify_event.json"))
+const testEvent = require("./sample_amplify-sns_event.json");
+const status = process.argv[2] || "success"; // Default to "success" if no argument is provided
+h(testEvent[status])
   .then(console.log)
   .catch(console.error);

@@ -1,22 +1,68 @@
 {
-    "Records": [
-        {
-            "EventSource": "aws:sns",
-            "EventVersion": "1.0",
-            "EventSubscriptionArn": "arn:aws:sns:ap-northeast-1:471029525890:amplify-deployment-notification:c6ed99fe-dcad-4d67-b14a-098c9d0fd1fb",
-            "Sns": {
-                "Type": "Notification",
-                "MessageId": "d82ee252-8237-5777-8440-82b0684d6383",
-                "TopicArn": "arn:aws:sns:ap-northeast-1:471029525890:amplify-deployment-notification",
-                "Message": "{\"version\":\"0\",\"id\":\"3c96fb7d-0523-21c3-eb2b-4c3c0bce79e7\",\"detail-type\":\"Amplify Deployment Status Change\",\"source\":\"aws.amplify\",\"account\":\"471029525890\",\"time\":\"2025-07-05T08:54:17Z\",\"region\":\"ap-northeast-1\",\"resources\":[\"arn:aws:amplify:ap-northeast-1:471029525890:apps/da1mkxfjm6gf2/branches/develop/jobs/0000000008\"],\"detail\":{\"appId\":\"da1mkxfjm6gf2\",\"branchName\":\"develop\",\"jobId\":\"8\",\"jobStatus\":\"SUCCEED\"}}",
-                "Timestamp": "2025-07-05T08:54:18.111Z",
-                "SignatureVersion": "1",
-                "Signature": "iJbvIo7nCE3rT38VDJ2+FWoVySEaqdZM06L/IGRUI0OnUgZhNjs19JRUpvAxFB1/OFYY++DNGV6cefCMIBzqeosJJUum0SZEY2jibRk/TOcJa2rBKd1RXwAhr9O3NAi5ij5CmNNWTaP97pVggBfytwyt7dU20eJNR6qSJYoW7Y4JNQIqFV1PNx3O+irns1zysd/uCNBx3rGAq50RxYIuOg4GBVGEU97M2ASxoxQXbBaO2exvJD2j8IDbYJZHxkSQfuu7i4ptVOVO0aNSheIflhXkxi/nA3L9E9t9TYg66gHLZ9Q3JygVU7EdDwYRpBanHRkS3u5IWkPT8gFbX5f/Ug==",
-                "SigningCertUrl": "https://sns.ap-northeast-1.amazonaws.com/SimpleNotificationService-9c6465fa7f48f5cacd23014631ec1136.pem",
-                "Subject": null,
-                "UnsubscribeUrl": "https://sns.ap-northeast-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:ap-northeast-1:471029525890:amplify-deployment-notification:c6ed99fe-dcad-4d67-b14a-098c9d0fd1fb",
-                "MessageAttributes": {}
+    "start": {
+        "Records": [
+            {
+                "EventSource": "aws:sns",
+                "EventVersion": "1.0",
+                "EventSubscriptionArn": "arn:aws:sns:ap-northeast-1:471029525890:amplify-deployment-notification:c6ed99fe-dcad-4d67-b14a-098c9d0fd1fb",
+                "Sns": {
+                    "Type": "Notification",
+                    "MessageId": "d82ee252-8237-5777-8440-82b0684d6383",
+                    "TopicArn": "arn:aws:sns:ap-northeast-1:471029525890:amplify-deployment-notification",
+                    "Message": "{\"version\":\"0\",\"id\":\"3c96fb7d-0523-21c3-eb2b-4c3c0bce79e7\",\"detail-type\":\"Amplify Deployment Status Change\",\"source\":\"aws.amplify\",\"account\":\"471029525890\",\"time\":\"2025-07-05T08:54:17Z\",\"region\":\"ap-northeast-1\",\"resources\":[\"arn:aws:amplify:ap-northeast-1:471029525890:apps/da1mkxfjm6gf2/branches/develop/jobs/0000000008\"],\"detail\":{\"appId\":\"da1mkxfjm6gf2\",\"branchName\":\"develop\",\"jobId\":\"8\",\"jobStatus\":\"STARTED\"}}",
+                    "Timestamp": "2025-07-05T08:54:18.111Z",
+                    "SignatureVersion": "1",
+                    "Signature": "iJbvIo7nCE3rT38VDJ2+FWoVySEaqdZM06L/IGRUI0OnUgZhNjs19JRUpvAxFB1/OFYY++DNGV6cefCMIBzqeosJJUum0SZEY2jibRk/TOcJa2rBKd1RXwAhr9O3NAi5ij5CmNNWTaP97pVggBfytwyt7dU20eJNR6qSJYoW7Y4JNQIqFV1PNx3O+irns1zysd/uCNBx3rGAq50RxYIuOg4GBVGEU97M2ASxoxQXbBaO2exvJD2j8IDbYJZHxkSQfuu7i4ptVOVO0aNSheIflhXkxi/nA3L9E9t9TYg66gHLZ9Q3JygVU7EdDwYRpBanHRkS3u5IWkPT8gFbX5f/Ug==",
+                    "SigningCertUrl": "https://sns.ap-northeast-1.amazonaws.com/SimpleNotificationService-9c6465fa7f48f5cacd23014631ec1136.pem",
+                    "Subject": null,
+                    "UnsubscribeUrl": "https://sns.ap-northeast-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:ap-northeast-1:471029525890:amplify-deployment-notification:c6ed99fe-dcad-4d67-b14a-098c9d0fd1fb",
+                    "MessageAttributes": {}
+                }
             }
-        }
-    ]
+        ]
+    },
+    "success": {
+        "Records": [
+            {
+                "EventSource": "aws:sns",
+                "EventVersion": "1.0",
+                "EventSubscriptionArn": "arn:aws:sns:ap-northeast-1:471029525890:amplify-deployment-notification:c6ed99fe-dcad-4d67-b14a-098c9d0fd1fb",
+                "Sns": {
+                    "Type": "Notification",
+                    "MessageId": "d82ee252-8237-5777-8440-82b0684d6383",
+                    "TopicArn": "arn:aws:sns:ap-northeast-1:471029525890:amplify-deployment-notification",
+                    "Message": "{\"version\":\"0\",\"id\":\"3c96fb7d-0523-21c3-eb2b-4c3c0bce79e7\",\"detail-type\":\"Amplify Deployment Status Change\",\"source\":\"aws.amplify\",\"account\":\"471029525890\",\"time\":\"2025-07-05T08:54:17Z\",\"region\":\"ap-northeast-1\",\"resources\":[\"arn:aws:amplify:ap-northeast-1:471029525890:apps/da1mkxfjm6gf2/branches/develop/jobs/0000000008\"],\"detail\":{\"appId\":\"da1mkxfjm6gf2\",\"branchName\":\"develop\",\"jobId\":\"8\",\"jobStatus\":\"SUCCEED\"}}",
+                    "Timestamp": "2025-07-05T08:54:18.111Z",
+                    "SignatureVersion": "1",
+                    "Signature": "iJbvIo7nCE3rT38VDJ2+FWoVySEaqdZM06L/IGRUI0OnUgZhNjs19JRUpvAxFB1/OFYY++DNGV6cefCMIBzqeosJJUum0SZEY2jibRk/TOcJa2rBKd1RXwAhr9O3NAi5ij5CmNNWTaP97pVggBfytwyt7dU20eJNR6qSJYoW7Y4JNQIqFV1PNx3O+irns1zysd/uCNBx3rGAq50RxYIuOg4GBVGEU97M2ASxoxQXbBaO2exvJD2j8IDbYJZHxkSQfuu7i4ptVOVO0aNSheIflhXkxi/nA3L9E9t9TYg66gHLZ9Q3JygVU7EdDwYRpBanHRkS3u5IWkPT8gFbX5f/Ug==",
+                    "SigningCertUrl": "https://sns.ap-northeast-1.amazonaws.com/SimpleNotificationService-9c6465fa7f48f5cacd23014631ec1136.pem",
+                    "Subject": null,
+                    "UnsubscribeUrl": "https://sns.ap-northeast-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:ap-northeast-1:471029525890:amplify-deployment-notification:c6ed99fe-dcad-4d67-b14a-098c9d0fd1fb",
+                    "MessageAttributes": {}
+                }
+            }
+        ]
+    },
+    "failed": {
+        "Records": [
+            {
+                "EventSource": "aws:sns",
+                "EventVersion": "1.0",
+                "EventSubscriptionArn": "arn:aws:sns:ap-northeast-1:471029525890:amplify-deployment-notification:c6ed99fe-dcad-4d67-b14a-098c9d0fd1fb",
+                "Sns": {
+                    "Type": "Notification",
+                    "MessageId": "d82ee252-8237-5777-8440-82b0684d6383",
+                    "TopicArn": "arn:aws:sns:ap-northeast-1:471029525890:amplify-deployment-notification",
+                    "Message": "{\"version\":\"0\",\"id\":\"3c96fb7d-0523-21c3-eb2b-4c3c0bce79e7\",\"detail-type\":\"Amplify Deployment Status Change\",\"source\":\"aws.amplify\",\"account\":\"471029525890\",\"time\":\"2025-07-05T08:54:17Z\",\"region\":\"ap-northeast-1\",\"resources\":[\"arn:aws:amplify:ap-northeast-1:471029525890:apps/da1mkxfjm6gf2/branches/develop/jobs/0000000008\"],\"detail\":{\"appId\":\"da1mkxfjm6gf2\",\"branchName\":\"develop\",\"jobId\":\"8\",\"jobStatus\":\"FAILED\"}}",
+                    "Timestamp": "2025-07-05T08:54:18.111Z",
+                    "SignatureVersion": "1",
+                    "Signature": "iJbvIo7nCE3rT38VDJ2+FWoVySEaqdZM06L/IGRUI0OnUgZhNjs19JRUpvAxFB1/OFYY++DNGV6cefCMIBzqeosJJUum0SZEY2jibRk/TOcJa2rBKd1RXwAhr9O3NAi5ij5CmNNWTaP97pVggBfytwyt7dU20eJNR6qSJYoW7Y4JNQIqFV1PNx3O+irns1zysd/uCNBx3rGAq50RxYIuOg4GBVGEU97M2ASxoxQXbBaO2exvJD2j8IDbYJZHxkSQfuu7i4ptVOVO0aNSheIflhXkxi/nA3L9E9t9TYg66gHLZ9Q3JygVU7EdDwYRpBanHRkS3u5IWkPT8gFbX5f/Ug==",
+                    "SigningCertUrl": "https://sns.ap-northeast-1.amazonaws.com/SimpleNotificationService-9c6465fa7f48f5cacd23014631ec1136.pem",
+                    "Subject": null,
+                    "UnsubscribeUrl": "https://sns.ap-northeast-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:ap-northeast-1:471029525890:amplify-deployment-notification:c6ed99fe-dcad-4d67-b14a-098c9d0fd1fb",
+                    "MessageAttributes": {}
+                }
+            }
+        ]
+    }
 }
