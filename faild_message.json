@@ -1,0 +1,31 @@
+{
+	"attachments": [
+		{
+			"color": "#e04941",
+			"blocks": [
+				{
+					"type": "header",
+					"text": {
+						"type": "plain_text",
+						"text": "Relese Error",
+						"emoji": true
+					}
+				},
+				{
+					"type": "rich_text",
+					"elements": [
+						{
+							"type": "rich_text_section",
+							"elements": [
+								{
+									"type": "text",
+									"text": "Urgent check and fix needed\n"
+								}
+							]
+						}
+					]
+				},
+			]
+		}
+	]
+}
