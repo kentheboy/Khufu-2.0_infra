@@ -1,5 +1,5 @@
 // This should be your webook URL from Slack Incoming Webhooks
-const webhookUrl = process.env.SLACK_WEBHOOK_URL;
+const webhookUrl = process.env.SLACK_WEBHOOK_URL || process.argv[3];
 
 const https = require("https");
 
@@ -22,7 +22,6 @@ function postRequest(data) {
         responseBody += chunk;
       });
       res.on("end", () => {
-        console.log("Slack response body:", responseBody);
         if (res.statusCode < 200 || res.statusCode >= 300) {
           console.error(
             `Slack request error log: \n${JSON.stringify(responseBody)}`
