@@ -53,9 +53,9 @@ function messageBuilder(event) {
   const status = snsMessageRaw.detail.jobStatus;
   let link;
   if (!branch) {
-    link = `https://${process.env.SLACK_WEBHOOK_URL}`;
+    link = `https://${process.env.WEB_DOMAIN}`;
   } else {
-    link = `https://${branch}.${process.env.SLACK_WEBHOOK_URL}`;
+    link = `https://${branch}.${process.env.WEB_DOMAIN}`;
   }
 
   let message = null;
